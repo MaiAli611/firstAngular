@@ -1,0 +1,24 @@
+
+    <section>
+      <div class="container vh-100  text-center">
+        <h1 class="fw-bold fs-4 pt-5"> PORTFOLIO COMPONENT <i class="fa-solid fa-star fs-6"></i></h1>
+        <div class="row g-4">
+          @for (item of cartoona; track $index) {
+          <div class="col-4">
+            <div class="inner position-relative" (click)="openLayer(item)">
+              <img [src]="item" class="w-100 rounded" alt="" />
+              <div class="overlayer">
+                <i class="fa-solid fa-plus fs-1 text-white"></i>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+    </section>
+    @if (selectedImage) {
+    <div class="layer" (click)="closeLayer()">
+      <img [src]="selectedImage" class="layer-img" />
+    </div>
+    }
+  
